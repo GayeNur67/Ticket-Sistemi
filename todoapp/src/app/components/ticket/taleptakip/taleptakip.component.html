@@ -1,0 +1,74 @@
+<div class="container align-items-start">
+  <div class="row">
+    <h3 class="todo-list text-white p-3">{{ getName() }} todo list</h3>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" [(ngModel)]="filterText" id="filterText" name="filterText" type="text" placeholder="Search" aria-label="Search">
+      <small class="text-muted" *ngIf="filterText"></small>
+      <button class="btn btn-outline-success text-black" type="submit">Search</button>
+    </form>   
+    <div class="form-check mb-3">
+      <input type="checkbox" [(ngModel)]="displayAll" class="form-check-input" name="" id="displayAll">
+      <label for="displayAll" class="form-check-label">Hepsini Göster</label>
+      <div class="my-2">{{ displayCount() }} Görev Tamamlandı</div>
+    </div>
+
+    <div class="alert alert-warning" *ngIf="getItems().length==0 else itemsTable">
+      Tüm Görevler Tamamlandı.
+    </div>
+
+    <ng-template #itemsTable>
+      <div class="message-container">
+        <div *ngFor="let item of getItems() | appFilter:filterText" class="message" 
+          [ngClass]="{ 'bg-success': !item.acilDurum || item.yapildi, 'bg-danger': item.acilDurum === 'acil' && !item.yapildi }">
+          <div class="message-header">
+            <div class="message-id">{{ item.id }}</div>
+            <div class="message-actions">
+              <button class="btn btn-danger" (click)="rejectItem(item)">Reddet</button>
+              <label class="checkbox-container">
+                <input type="checkbox" (change)="onYapildiChanged(item)" [(ngModel)]="item.yapildi">
+                <span class="checkmark"></span>
+              </label>
+              
+              <span class="icon-container">
+                <i class="far fa-comment-alt" (click)="handleIconClick(item)"></i>
+              </span>
+
+            </div>
+            
+          </div>
+          <div class="message-body">
+            <div class="message-content">                              
+              <div><strong>Tesis:</strong> {{ item.tesis }}</div>
+              <div><strong>Bölüm:</strong> {{ item.bolum }}</div>
+              <div><strong>Talep Tipi:</strong> {{ item.talepTipi }}</div>
+              <div><strong>Talep Çeşidi:</strong> {{ item.talepCesidi }}</div>
+              <div><strong>İşin Türü:</strong> {{ item.isinTuru }}</div>
+              <div><strong>Talep Eden:</strong> {{ item.talepEden }}</div>
+              <div>
+                <strong>Assigned Person:</strong> 
+                <select [(ngModel)]="item.assignedPerson">
+                  <option value="">Select Person</option>
+                  <option *ngFor="let person of assignedPersons" [value]="person">{{ person }}</option>
+                </select>
+              </div>
+              <div class="icon-container" style="display: flex; align-items: center;">
+                <i class="far fa-file" id="fileIcon" (click)="openFile()"></i>  
+                
+              </div>                       
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    
+    <!-- Açıklama modalı -->
+    <div id="modal" class="modal" style="display: none;" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <div id="aciklamaMetni"></div>
+      </div>
+    </div>
+    <!-- Açıklama modalı -->
+    
+  </div>
+</div>

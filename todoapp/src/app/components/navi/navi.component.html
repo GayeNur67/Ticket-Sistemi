@@ -1,0 +1,62 @@
+<div class="navbar-container">
+  <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+          <a class="navbar-brand font-weight-bold" routerLink="/" href="home">
+           <!--    <img src="assets/img/logoo.png" alt="TEKLASLogo" class="logo">-->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <!-- Ana sayfa her zaman görünsün -->
+                  <li class="nav-item">
+                      <a class="nav-link active text-white" routerLink="/home" href="home">Home</a>
+                  </li>
+                  <!-- Diğer sayfalar sadece giriş yapıldıysa görünsün -->
+                  <li *ngIf="isLoggedIn" class="nav-item">
+                      <a class="nav-link text-white" routerLink="/link" href="link">MyTickets</a>
+                  </li>
+                  <li *ngIf="isLoggedIn" class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Ticket
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" routerLink="/ticket/taleptakip" href="taleptakip">Talep Takip</a></li>
+                          <li><a class="dropdown-item" routerLink="/ticket/yenitalep" href="yenitalep">Yeni Talep</a></li>
+                          
+                      </ul>
+                  </li>
+                  <!-- Disabled sayfa sadece giriş yapıldıysa görünsün -->
+                  <li *ngIf="isLoggedIn" class="nav-item">
+                      <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- Kullanıcı girişi yapıldıysa kullanıcı bilgisi göster -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <!-- Kullanıcı girişi yapıldığında ve kullanıcı bilgisi mevcut olduğunda çıkış yap butonunu göster -->
+            <li *ngIf="isLoggedIn && loggedInUser" class="nav-item">
+                <a class="nav-link text-white" (click)="logout()">
+                    <i class="fas fa-sign-out-alt"></i> <!-- Çıkış ikonu -->
+                    Çıkış Yap
+                </a>
+            </li>
+            <!-- Kullanıcı girişi yapıldığında ve kullanıcı bilgisi mevcut olduğunda Kullanıcı Ekranı'nı göster -->
+            <li *ngIf="isLoggedIn && loggedInUser" class="nav-item">
+                <a class="nav-link text-white" routerLink="/user-screen" href="user-screen">
+                    <i class="fas fa-user"></i> <!-- Kullanıcı ikonu -->
+                    {{loggedInUser}}
+                </a>
+            </li>
+            <!-- Kullanıcı girişi yapılmadığında veya kullanıcı bilgisi yoksa giriş butonunu göster -->
+            <li *ngIf="!isLoggedIn || !loggedInUser" class="nav-item">
+                <a class="nav-link text-white" (click)="openLoginForm()" href="javascript:void(0)">
+                    <i class="fas fa-sign-in-alt"></i> <!-- Giriş ikonu -->
+                    Giriş Yap
+                </a>
+            </li>
+        </ul>
+      </div>
+  </nav>
+</div>

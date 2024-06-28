@@ -1,0 +1,37 @@
+.container {
+    background-color: #faf7f7;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Hafif bir gölge */
+    padding: 20px;
+    background-image: url('/assets/img/pattern.png'); /* Arka plan deseni */
+    background-repeat: no-repeat; /* Deseni tekrar et */
+    background-size: cover; /* Resmi arka plana sığdır */
+}
+
+.login-header {
+    font-size: 24px; /* Metin fontunu büyüt */
+    font-weight: bold; /* Metin fontunu kalınlaştır */
+    color: white; /* Metin rengini beyaz yap */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5); /* Hafif bir gölge ekle */
+    color:#800000;
+  }
+  /* Username etiketi için stil tanımı */
+label[for="username"] {
+    /* Stil özellikleri buraya gelecek */
+   
+    font-weight: bold; /* Metin fontunu kalınlaştır */
+    color: white; /* Metin rengini beyaz yap */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5); /* Hafif bir gölge ekle */
+    color: rgb(9, 65, 4);
+  }
+  
+  /* Password etiketi için stil tanımı */
+  label[for="password"] {
+    /* Stil özellikleri buraya gelecek */
+    
+    font-weight: bold; /* Metin fontunu kalınlaştır */
+    color: white; /* Metin rengini beyaz yap */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5); /* Hafif bir gölge ekle */
+    color: rgb(9, 65, 4);
+  }
+  

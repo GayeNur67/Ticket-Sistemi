@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Selected Tickets</h2>
+    
+    <ul>
+      <!-- Seçilen ticketleri listeleyin -->
+      <li *ngFor="let ticket of selectedTickets">
+        
+        <div>{{ ticket.description }}</div>
+        <!-- Ekstra ticket bilgileri buraya eklenebilir -->
+      </li>
+    </ul>
+    <!-- Eğer seçilen ticket yoksa kullanıcıya bir mesaj gösterin -->
+    <div *ngIf="selectedTickets.length === 0">No tickets selected.</div>
+    <!-- Seçilen ticketleri MyTickets sayfasına eklemek için bir buton -->
+    <button class="btn btn-primary" (click)="addToMyTickets()">Add Selected Tickets to MyTickets</button>
+  </div>
+  

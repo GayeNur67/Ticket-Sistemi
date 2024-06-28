@@ -1,0 +1,65 @@
+.navbar {
+  position: fixed; /* veya sticky */
+  top: 0;
+  width: 100%;
+}
+body {
+  padding-top: 70px; /* Navbar'ın yüksekliği için uygun bir değer */
+}
+.row {
+  margin-top: 100px; /* Navbar'ın altında başlayacak boşluğun yüksekliği */
+}
+
+.navbar {
+  z-index: 1000; /* Navbar'ın z-index değeri */
+}
+
+
+p{
+    color: brown;
+}
+
+body {
+    background-color: white; 
+  }
+  .table {
+    width: 100%; /* Tablonun genişliğini belirleyin */
+}
+
+.table th,
+.table td {
+    padding: 8px; /* Hücrelerin içeriğiyle arasındaki boşluğu ayarlayın */
+}
+
+.table input[type="checkbox"] {
+    margin: 0; /* Checkbox'ın kenar boşluğunu sıfırlayın */
+    transform: scale(1.5); /* Checkbox boyutunu büyütün */
+}
+.bg-success {
+    background-color: #67a775  /* Diğer kuralları geçersiz kılmak için !important kullanılıyor */
+}
+.navbar {
+    margin-bottom: 20px; /* veya istediğiniz uygun değeri verebilirsiniz */
+  }
+  
+  h3 {
+    margin-top: 20px; /* veya istediğiniz uygun değeri verebilirsiniz */
+  }
+  .navbar .nav-link.text-white {
+    color: white;
+  }
+  
+  .logo {
+    width: 100px; /* Logo genişliği */
+    height: auto; /* Logo yüksekliğini otomatik ayarla */
+  }
+  
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

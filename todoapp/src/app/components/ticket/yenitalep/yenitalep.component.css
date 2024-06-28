@@ -1,0 +1,312 @@
+
+/* Form labelları için özel stil */
+.form-label {
+  font-weight: bold; /* Labelları kalın yapar */
+  color: #555; /* Labelları gri renge ayarlar */
+  margin-bottom: 0.5rem; /* Labellar arasındaki boşluğu azaltır */
+}
+
+p{
+    color:brown;
+}
+
+.list-group-item.active {
+    background-color:  #800000; 
+    color: #ffffff; /* Beyaz metin */
+}
+.row {
+  margin-top: 100px; /* Navbar'ın altında başlayacak boşluğun yüksekliği */
+}
+
+.thumbnail {
+  transition: transform 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+.navbar-container {
+  display: flex;
+  justify-content: center;
+}
+.custom-navbar {
+  border-bottom-left-radius: 10px; /* Sol alt köşeyi yumuşat */
+  border-bottom-right-radius: 10px; /* Sağ alt köşey*/
+  padding-bottom: 20px; /* Navbar'ı aşağı doğru genişlet */}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Diğer elementlerin üzerinde olması için yüksek bir z-index değeri */
+}
+.navbar .nav-link.text-white {
+    color: white;
+  }
+  
+  .navbar-brand, .nav-link.text-white {
+    font-weight: bold;
+}
+
+.custom-navbar {
+    background-color: #800000; /* Bordo rengi */
+  }
+
+  /* .navbar {
+    background-color: #181C32; /* Lacivert rengi */
+    .dropdown-item:hover {
+        background-color: #f0f0f0; /* Hover durumunda arka plan rengi */
+        color: #800000; /* Metin rengi */
+      }
+      .login-form {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      
+      
+      .form-group {
+        margin-bottom: 15px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #0056b3;
+      }}
+      .message-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .message {
+        width: calc(33.33% - 20px); /* 33.33% genişlikte, 20 piksel boşluk bırakarak */
+        margin: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+    }
+    
+    @media (max-width: 768px) {
+        .message {
+            width: calc(50% - 20px); /* 50% genişlikte, 20 piksel boşluk bırakarak */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .message {
+            width: calc(100% - 20px); /* Tam genişlik, 20 piksel boşluk bırakarak */
+        }
+    }
+   
+  
+  .message {
+      max-width: 70%; /* Maksimum genişlik */
+      margin: 10px;
+      padding: 10px;
+      border-radius: 20px; /* Yuvarlatılmış köşeler */
+      background-color: #f0f0f0;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  }
+  
+  .message .message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .message .message-header .message-id {
+      font-weight: bold;
+      margin-right: 10px;
+  }
+  
+  .message .message-header .message-actions {
+      margin-left: auto;
+  }
+  
+  .message .message-body {
+      margin-top: 10px;
+  }
+  
+  .message .message-content {
+      font-size: 14px;
+  }
+  .message {
+    position: relative; /* Mesaj balonu mutlak pozisyonlu butonun referans noktası olacak */
+}
+.message .message-actions button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+  select.form-control option[disabled]:first-of-type {
+    color: #aaa; /* Silik gri renk */
+  }
+  .container {
+    position: relative;
+  }
+  
+  .ticket {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .message-box {
+    position: absolute;
+    bottom: -100px; /* Başlangıçta gizli olması için */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .message-content {
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+ 
+/* Modal */
+.modal {
+  display: none; /* Başlangıçta gizli */
+  position: fixed; /* Ekranın üzerinde sabit */
+  z-index: 1; /* Diğer elementlerin üzerinde */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ekranın tam genişliği */
+  height: 100%; /* Ekranın tam yüksekliği */
+  overflow: auto; /* İçerik uzunsa kaydırma çubuğu */
+  background-color: rgba(0,0,0,0.4); /* Karartma efekti */
+}
+
+/* Modal içeriği */
+.modal-content {
+  color:white;
+  background-color: #5a7281; /* Beyaz arka plan */
+  margin: auto; /* Dikey ve yatay konumlandırma için */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Modal genişliği */
+  box-shadow: 0 4px 8px 0 rgba(238, 163, 1, 0.2), 0 6px 20px 0 rgba(236, 8, 8, 0.19); /* Gölge efekti */
+  position: absolute; /* Modal içeriğini ortalamak için */
+  top: 50%; /* Dikey olarak ortalamak */
+  left: 50%; /* Yatay olarak ortalamak */
+  transform: translate(-50%, -50%); /* Hem yatay hem dikey olarak tam ortalamak */
+}
+
+/* Modal kapatma düğmesi */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.pointer-on-hover {
+  cursor: pointer;
+}
+/* Checkbox stili */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #8d7b7b;
+  border-radius: 50%;
+}
+
+/* Checkbox tıklanınca işaretlenme stilini ayarla */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #470202;
+}
+
+/* Checkmark stilini özelleştirme */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Checkbox işaretlendiğinde checkmark'ı göster */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Checkmark'ı içine koyulacak içeriği stilize etme */
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid rgb(170, 111, 175);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Yuvarlak ikonun stili */
+.fa-comment-alt {
+  cursor: pointer;
+}
+.fa-comment-alt {
+  color: rgb(8, 8, 8);
+}
+.icon-container {
+  cursor: pointer;
+}
+
+.todo-list {
+  background-color: #800000; /* Bordo rengi */
+  /* Diğer stiller buraya eklenebilir */
+}
+

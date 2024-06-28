@@ -1,0 +1,81 @@
+<div class="container align-items-start">
+    <div class="row">
+      <!-- Form -->
+      <div class="col-md-8 mx-auto">
+        <h3 class="todo-list text-white p-3">
+           Talep Oluşturma
+        </h3>
+  
+        <form>
+          <div class="mb-3">
+            <label for="tesis" class="form-label">Tesis</label>
+            <select id="tesis" class="form-control" [(ngModel)]="tesis" name="tesis">
+              <option value="" disabled selected>Tesis Seçiniz</option>
+              <option *ngFor="let option of tesisSecenekleri" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="bolum" class="form-label">Bölüm</label>
+            <select id="bolum" class="form-control" [(ngModel)]="bolum" name="bolum">
+              <option value="" disabled selected>Bölüm Seçiniz</option>
+              <option *ngFor="let option of bolumSecenekleri" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="talepTipi" class="form-label">Talep Tipi</label>
+            <select id="talepTipi" class="form-control" [(ngModel)]="talepTipi" name="talepTipi">
+              <option value="" disabled selected>Talep Tipi Seçiniz</option>
+              <option *ngFor="let option of talepTipiSecenekleri" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="inputtext" class="form-label">Talep Çeşiti</label>
+            <select id="inputtext" class="form-control" [(ngModel)]="inputtext" name="inputtext">
+              <option value="" disabled selected>Talep Çeşiti Seçiniz</option>
+              <option *ngFor="let option of talepCesidiSecenekleri" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="isinTuru" class="form-label">İşin Türü</label>
+            <select id="isinTuru" class="form-control" [(ngModel)]="isinTuru" name="isinTuru">
+              <option value="" disabled selected>İşin Türü Seçiniz</option>
+              <option *ngFor="let option of isinTuruSecenekleri" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="talepEden" class="form-label">Talep Eden</label>
+            <input type="text" class="form-control" id="talepEden" [(ngModel)]="talepEden" name="talepEden" placeholder="Talep Eden">
+          </div>
+
+          <div class="mb-3">
+            <label for="acilDurum" class="form-label">Acil Durum</label>
+            <select id="acilDurum" class="form-control" [(ngModel)]="acilDurum" name="acilDurum">
+              <option value="" disabled selected>Durum</option>
+            <option value="normal">Normal</option>
+            <option value="acil">Acil</option>
+          </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description" placeholder="Description">
+          </div>
+
+  
+          <div class="mb-3">
+            <label for="fileInput" class="form-label">Dosya Seç</label>
+            <input type="file" class="form-control" id="fileInput" (change)="onFileSelected($event)">
+          </div>
+  
+          <button type="button" class="btn btn-outline-secondary" (click)="addItem()">Ekle</button>
+        </form> 
+      </div>
+    </div>
+    
+  </div>
+  
